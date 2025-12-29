@@ -1,0 +1,72 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    background: #0d0d1a;
+    font-family: 'Courier New', Courier, monospace;
+    color: #00ffcc;
+    user-select: none;
+}
+#game-ui {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 10;
+    text-shadow: 0 0 10px #00ffcc;
+    pointer-events: none;
+}
+.stat { font-size: 22px; margin-bottom: 5px; background: rgba(0,0,0,0.3); padding: 5px; }
+
+#game-over {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(20, 0, 0, 0.95);
+    padding: 50px;
+    border: 3px solid #ff0055;
+    text-align: center;
+    display: none;
+    z-index: 100;
+    box-shadow: 0 0 50px #ff0055;
+}
+
+#game-over h1 { font-size: 48px; color: #ff0055; animation: glitch 0.2s infinite; }
+
+@keyframes glitch {
+    0% { transform: translate(0); }
+    20% { transform: translate(-3px, 3px); }
+    40% { transform: translate(-3px, -3px); }
+    60% { transform: translate(3px, 3px); }
+    80% { transform: translate(3px, -3px); }
+    100% { transform: translate(0); }
+}
+
+button {
+    padding: 15px 30px;
+    font-size: 20px;
+    cursor: pointer;
+    background: #00ffcc;
+    border: none;
+    color: #0d0d1a;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+button:hover { background: #fff; box-shadow: 0 0 15px #00ffcc; }
+
+canvas { display: block; position: absolute; top: 0; left: 0; }
+
+#splash {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(10,10,20,0.95);
+    color: #00ffcc;
+    padding: 30px;
+    border: 2px solid #00ffcc;
+    text-align: center;
+    z-index: 200;
+}
+#splash h1 { margin: 0 0 12px 0; font-size: 32px; }
+#splash .stat { background: transparent; display:block; margin:6px 0; }
+#splash button { pointer-events: auto; }

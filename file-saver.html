@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Saver: System Overload</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div id="game-ui">
+    <div class="stat">SCORE: <span id="score">0</span></div>
+    <div class="stat">BEST: <span id="high-score">0</span></div>
+    <div class="stat">INTEGRITY: <span id="health">100</span>%</div>
+</div>
+
+<div id="splash">
+    <h1>FILE SAVER</h1>
+    <div class="stat">FOLDER COLOR: <input id="folderColor" type="color" value="#00ffcc" style="vertical-align:middle;" /></div>
+    <div class="stat">DIFFICULTY: <select id="difficulty" style="vertical-align:middle;">
+            <option value="easy">Easy</option>
+            <option value="medium" selected>Medium</option>
+            <option value="hard">Hard</option>
+            <option value="crazy">Crazy</option>
+        </select></div>
+    <div style="margin-top:12px;"><button id="startBtn">START</button></div>
+    <p style="font-size:12px;margin-top:8px;color:#aaa;">Tip: Use Q/E or the color picker in the splash to set folder color; Q/E still works in-game.</p>
+</div>
+
+<div id="game-over">
+    <h1>CRITICAL FAILURE</h1>
+    <p>DATA LOSS DETECTED: <span id="final-score">0</span> UNITS</p>
+    <button id="rebootBtn">REBOOT SYSTEM</button>
+</div>
+
+<canvas id="gameCanvas"></canvas>
+
+<audio id="bgMusic" loop>
+    <source src="https://cdn.pixabay.com/audio/2022/03/15/audio_731478148f.mp3" type="audio/mpeg">
+</audio>
+
+    <script src="model.js"></script>
+    <script src="view.js"></script>
+    <script src="controller.js"></script>
+
+</body>
+</html>
